@@ -2,7 +2,7 @@
 #include "http_upload.h"
 #include "esp_log.h"
 #include "esp_http_client.h"
-#include "wifi_module.h"
+#include "wifi.h"
 
 #define SERVER_URL "http://192.168.33.93:8000/upload"
 

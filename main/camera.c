@@ -1,4 +1,4 @@
-#include "camera_module.h"
+#include "camera.h"
 #include "esp_log.h"
 
 static const char *TAG = "CAM_MOD";

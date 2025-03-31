@@ -6,7 +6,7 @@
 #include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "wifi_module.h"
+#include "wifi.h"
 #include "freertos/event_groups.h"
 
 
