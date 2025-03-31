@@ -2,3 +2,5 @@ build/
 __pycache__/
 .vscode/
 uploads/
+managed_components/
+dependencies.lock

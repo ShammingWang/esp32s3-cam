@@ -1,8 +1,28 @@
 dependencies:
+  espressif/esp32-camera:
+    component_hash: c3eb05fbeeae884a23bed9b17d48d5f0da8872beadae0c0e747d2fbea6094f06
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.0.15
+  espressif/led_strip:
+    component_hash: 28c6509a727ef74925b372ed404772aeedf11cce10b78c3f69b3c66799095e2d
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.5.5
   idf:
     source:
       type: idf
     version: 5.4.0
-manifest_hash: 06a76c1bdea0ee9953dbe66dc1eb5ea4b157dbc5999962e4b65153dbefdb7f21
+direct_dependencies:
+- espressif/esp32-camera
+- espressif/led_strip
+manifest_hash: 8c6a9fa4e238fe1c96c350e33f6bbab2624dae995ce738d12fee0e9961da79f2
 target: esp32s3
 version: 2.0.0

@@ -8,7 +8,7 @@
 #include "wifi_module.h"
 #include "http_upload.h"
 
-#include "http_stream.h"  // 别忘了包含
+#include "http_stream.h"
 
 
 static const char *TAG = "CAM_HTTP_APP";
