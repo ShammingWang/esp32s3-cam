@@ -12,7 +12,7 @@
 
 #define WIFI_SSID "3"
 #define WIFI_PASS "1685087768"
-static const char *TAG = "WIFI_MODULE";
+static const char *TAG = "WIFI";
 
 
 static EventGroupHandle_t wifi_event_group;

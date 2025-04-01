@@ -33,40 +33,23 @@ void app_main(void) {
     configure_led();
 
 
-    // start_stream_server();  // ← 加上这个！
+    // start_stream_server();  // ← 加上这个开启推流
 
-    // while(1) {
-    //     ESP_LOGI("APP", "Doing other tasks...");
-    //     vTaskDelay(pdMS_TO_TICKS(5000));
-    // }
-    uint8_t s_led_state = 0;
+    // uint8_t s_led_state = 0;
     while(1) {
         // ESP_LOGI(TAG, "10seconds print");
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-        s_led_state = !s_led_state;
-        blink_led(s_led_state);
-        ESP_LOGI(TAG, "Capturing image...");
+        // ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
+        // s_led_state = !s_led_state;
+        // blink_led(s_led_state);
+        // ESP_LOGI(TAG, "Capturing image...");
         camera_fb_t *fb = camera_module_capture();
         if (fb) {
-            ESP_LOGI(TAG, "Image size: %d bytes", fb->len);
-            // send_image(fb);
+            // ESP_LOGI(TAG, "Image size: %d bytes", fb->len);
+            send_image(fb);
             camera_module_return(fb);
         } else {
             ESP_LOGW(TAG, "Capture failed");
         }
-        vTaskDelay(pdMS_TO_TICKS(5000));
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
-
-    // while (1) {
-    //     ESP_LOGI(TAG, "Capturing image...");
-    //     camera_fb_t *fb = camera_module_capture();
-    //     if (fb) {
-    //         ESP_LOGI(TAG, "Image size: %d bytes", fb->len);
-    //         send_image(fb);
-    //         camera_module_return(fb);
-    //     } else {
-    //         ESP_LOGW(TAG, "Capture failed");
-    //     }
-    //     vTaskDelay(pdMS_TO_TICKS(10000));
-    // }
 }
